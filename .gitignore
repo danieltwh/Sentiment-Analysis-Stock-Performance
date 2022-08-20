@@ -133,3 +133,4 @@ dmypy.json
 .gitsecret/keys/random_seed
 !*.secret
 notebooks/mlconfig.py
+data_pipeline/AlphaVantage_Collection/mlconfig.py
