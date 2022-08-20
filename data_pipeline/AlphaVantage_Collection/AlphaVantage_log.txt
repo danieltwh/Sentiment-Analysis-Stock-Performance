@@ -1,0 +1,76 @@
+[2022-08-18 22:33:57] SUCCESS Stock Tickers: AA
+    AA: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:04:05] SUCCESS Stock Tickers: A AA AAL AAON AAP
+    A: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AA: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AAL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AAON: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AAP: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:05:21] SUCCESS Stock Tickers: A
+    A: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:06:05] SUCCESS Stock Tickers: AA
+    AA: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:12:04] SUCCESS Stock Tickers: AAL
+    AAL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:13:35] SUCCESS Stock Tickers: AAON
+    AAON: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:13:51] SUCCESS Stock Tickers: AAP
+    AAP: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:14:18] SUCCESS Stock Tickers: AAPL
+    AAPL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:16:29] SUCCESS Stock Tickers: AAWW
+    AAWW: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:17:28] SUCCESS Stock Tickers: AB ABB ABBV ABC ABCB ABCL ABCM
+    AB: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABB: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABBV: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABC: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABCB: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABCL: {'Note': 'Thank you for using Alpha Vantage! Our standard API call frequency is 5 calls per minute and 500 calls per day. Please visit https://www.alphavantage.co/premium/ if you would like to target a higher API call frequency.'}
+    ABCM: {'Note': 'Thank you for using Alpha Vantage! Our standard API call frequency is 5 calls per minute and 500 calls per day. Please visit https://www.alphavantage.co/premium/ if you would like to target a higher API call frequency.'}
+[2022-08-19 12:18:04] SUCCESS Stock Tickers: ABCL ABCM ABEV ABG ABM
+    ABCL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABCM: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABEV: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABG: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABM: {'Note': 'Thank you for using Alpha Vantage! Our standard API call frequency is 5 calls per minute and 500 calls per day. Please visit https://www.alphavantage.co/premium/ if you would like to target a higher API call frequency.'}
+[2022-08-19 12:18:05] SUCCESS Stock Tickers: ABCL ABCM ABEV ABG ABM
+    ABCL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABCM: {'Note': 'Thank you for using Alpha Vantage! Our standard API call frequency is 5 calls per minute and 500 calls per day. Please visit https://www.alphavantage.co/premium/ if you would like to target a higher API call frequency.'}
+    ABEV: {'Note': 'Thank you for using Alpha Vantage! Our standard API call frequency is 5 calls per minute and 500 calls per day. Please visit https://www.alphavantage.co/premium/ if you would like to target a higher API call frequency.'}
+    ABG: {'Note': 'Thank you for using Alpha Vantage! Our standard API call frequency is 5 calls per minute and 500 calls per day. Please visit https://www.alphavantage.co/premium/ if you would like to target a higher API call frequency.'}
+    ABM: {'Note': 'Thank you for using Alpha Vantage! Our standard API call frequency is 5 calls per minute and 500 calls per day. Please visit https://www.alphavantage.co/premium/ if you would like to target a higher API call frequency.'}
+[2022-08-19 12:20:05] SUCCESS Stock Tickers: ABCM ABEV ABG ABM ABMD
+    ABCM: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABEV: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABG: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABM: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABMD: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:23:55] SUCCESS Stock Tickers: AMD AAPL A AA AAL
+    AMD: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AAPL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    A: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AA: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AAL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:24:19] SUCCESS Stock Tickers: AAON AAP AAPL AAWW AB
+    AAON: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AAP: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AAPL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AAWW: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AB: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:24:59] SUCCESS Stock Tickers: ABB ABBV ABC ABCB ABCL
+    ABB: {'Note': 'Thank you for using Alpha Vantage! Our standard API call frequency is 5 calls per minute and 500 calls per day. Please visit https://www.alphavantage.co/premium/ if you would like to target a higher API call frequency.'}
+    ABBV: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABC: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABCB: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    ABCL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:26:02] SUCCESS Stock Tickers: AMD AAPL A
+    AMD: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AAPL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    A: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:27:11] SUCCESS Stock Tickers: AA AAL
+    AA: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AAL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+[2022-08-19 12:28:13] SUCCESS Stock Tickers: AMD AAPL
+    AMD: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
+    AAPL: {'Information': 'No articles found. Please adjust the time range or refer to the API documentation https://www.alphavantage.co/documentation#newsapi and try again.'}
