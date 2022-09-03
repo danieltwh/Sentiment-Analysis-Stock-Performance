@@ -1,0 +1,27 @@
+{
+  "name": "sentiment-analysis-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.3",
+    "@popperjs/core": "^2.11.6",
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-data-table-component": "^7.5.3",
+    "react-data-table-component-extensions": "^1.6.0",
+    "react-dom": "18.2.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5"
+  }
+}
