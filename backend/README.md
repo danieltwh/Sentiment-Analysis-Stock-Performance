@@ -11,7 +11,7 @@
   - [Installation](#installation)
   - [Usage](#usage)
 
-## Frontend Overview
+## Backend Overview
 This folder houses the backend for the NUS FinTech Sentiment Analysis for Stock Performance project. It consists of xxx. This project was developed using Express.js, PostgreSQL and Google Cloud.
 
 ## Requirements
