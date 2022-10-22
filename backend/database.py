@@ -13,7 +13,10 @@ import os
 # from key import HEROKU_POSTGRE_PASSWORD
 
 # SQLALCHEMY_DATABASE_URL = f"postgresql://fdyjxmoknqhbkk:{HEROKU_POSTGRE_PASSWORD}@ec2-18-209-78-11.compute-1.amazonaws.com/d7ul40jkdp08kb"
-SQLALCHEMY_DATABASE_URL = os.environ["DATABASE_URL"]
+# SQLALCHEMY_DATABASE_URL 
+t = os.environ["DATABASE_URL"]
+SQLALCHEMY_DATABASE_URL  = t[:8] + "ql" + t[8:]
+# SQLALCHEMY_DATABASE_URL = f"postgresql://fdyjxmoknqhbkk:{HEROKU_POSTGRE_PASSWORD}@ec2-18-209-78-11.compute-1.amazonaws.com/d7ul40jkdp08kb"
 
 engine = create_engine(
     url = SQLALCHEMY_DATABASE_URL,
