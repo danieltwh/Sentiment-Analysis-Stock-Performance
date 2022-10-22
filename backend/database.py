@@ -4,10 +4,10 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-if os.path.exists(".env"):
-    load_dotenv(".env")
+# if os.path.exists(".env"):
+#     load_dotenv(".env")
     
 
 # from key import HEROKU_POSTGRE_PASSWORD
