@@ -4,18 +4,20 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
 
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# if os.path.exists(".env"):
-#     load_dotenv(".env")
-    
+if os.path.exists(".env"):
+    load_dotenv(".env")
+    SQLALCHEMY_DATABASE_URL = os.environ["DATABASE_URL"]
+else:
+    t = os.environ["DATABASE_URL"]
+    SQLALCHEMY_DATABASE_URL  = t[:8] + "ql" + t[8:]
 
 # from key import HEROKU_POSTGRE_PASSWORD
 
 # SQLALCHEMY_DATABASE_URL = f"postgresql://fdyjxmoknqhbkk:{HEROKU_POSTGRE_PASSWORD}@ec2-18-209-78-11.compute-1.amazonaws.com/d7ul40jkdp08kb"
 # SQLALCHEMY_DATABASE_URL 
-t = os.environ["DATABASE_URL"]
-SQLALCHEMY_DATABASE_URL  = t[:8] + "ql" + t[8:]
+
 # SQLALCHEMY_DATABASE_URL = f"postgresql://fdyjxmoknqhbkk:{HEROKU_POSTGRE_PASSWORD}@ec2-18-209-78-11.compute-1.amazonaws.com/d7ul40jkdp08kb"
 
 engine = create_engine(

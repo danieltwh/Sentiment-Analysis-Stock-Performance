@@ -1,6 +1,7 @@
 from datetime import datetime
 from lib2to3.pytree import Base
 from typing import List, Union
+from xml.etree.ElementTree import QName
 
 from pydantic import BaseModel
 
@@ -45,5 +46,29 @@ class News(NewsBase):
     
     def __str__(self) -> str:
         return f"{self.id}" + super().__str__()
+
+class StockNewsInput(NewsCreate):
+    # stock_ticker: str
+    sentiment: float
+    match_score: float
+
+    def __str__(self) -> str:
+        return  super().__str__() + f"{self.sentiment} {self.match_score}"
+
+class StockNewsCreate(StockNewsInput):
+    stock_ticker: str
+
+    def __str__(self) -> str:
+        return  super().__str__() + f"{self.sentiment} {self.match_score}"
+
+class StockNews(BaseModel):
+     stock_ticker: str
+     news_id: int
+     sentiment: float
+     match_score: float
+
+     def __str__(self) -> str:
+        return  super().__str__() + f"{self.sentiment} {self.match_score}"
+
 
 

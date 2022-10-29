@@ -33,17 +33,17 @@ def get_news(db: Session, news_id: int):
 
 
 def create_news(db: Session, news: schemas.NewsCreate):
-    db_news = models.News(
-        title = news.title,
-        date = news.date,
-        source = news.source,
-        url = news.url,
-        sentiment = news.sentiment,
-        )
+    db_news = models.News(**news.dict())
     db.add(db_news)
     db.commit()
     db.refresh(db_news)
     return db_news
+
+def delete_news(db: Session, news_id: int):
+    db.query(models.News).filter(models.News.id == news_id).delete()
+    db.commit()
+    return
+
 
 def get_stock_news(db: Session, stock_ticker: str):
     columns = [
@@ -61,6 +61,41 @@ def get_stock_news(db: Session, stock_ticker: str):
         ).filter(models.StockNews.stock_ticker == stock_ticker).all()
     result = list(map(lambda x: dict(x), result))
     return result
+
+
+# def create_stock_news(db: Session, news_data: schemas.NewsCreate, stock_news: schemas.StockNews,):
+def create_stock_news(db: Session, stock_news_data: schemas.StockNewsCreate):
+    # Creating the news model for inserting news data
+    news_data = stock_news_data.dict()
+    del news_data["sentiment"]
+    del news_data["match_score"]
+    del news_data["stock_ticker"]
+
+    # Creating the news entry
+    db_news = models.News(**news_data)
+    db.add(db_news)
+    db.flush()
+
+    # Check if insertion of news entry was successful
+    if db_news is None:
+        db.rollback()
+        return None, None
+
+    # If successful, insert the new stock_news relationship
+    db_stock_news = models.StockNews(
+        stock_ticker = stock_news_data.stock_ticker,
+        news_id = db_news.id,
+        sentiment = stock_news_data.sentiment,
+        match_score = stock_news_data.match_score
+    )
+    
+    db.add(db_stock_news)
+    db.flush()
+
+    # Commit the new changes
+    db.commit()
+    return db_news, db_stock_news
+
 
 def get_stock_sentiment(db: Session, stock_ticker: str):
     result = db.query(func.avg(models.StockNews.sentiment)).join(
