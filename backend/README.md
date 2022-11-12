@@ -11,8 +11,8 @@
   - [Installation](#installation)
   - [Usage](#usage)
 
-## Frontend Overview
-This folder houses the backend for the NUS FinTech Sentiment Analysis for Stock Performance project. It consists of xxx. This project was developed using Express.js, PostgreSQL and Google Cloud.
+## Backend Overview
+This folder houses the backend for the NUS FinTech Sentiment Analysis for Stock Performance project. It consists of xxx. This project was developed using FastAPI, PostgreSQL and Heroku. The deployed live link for the API: [API Link](https://nlp-stock-performance-backend.herokuapp.com/)
 
 ## Requirements
 1. PostgreSQL installed in your system
@@ -48,7 +48,8 @@ This folder houses the backend for the NUS FinTech Sentiment Analysis for Stock 
 
 ## Exposed APIs
 The following APIs are exposed to interact with the database for the project. The deployed base live link for the API:
-(link)
+[API Link](https://nlp-stock-performance-backend.herokuapp.com/)
+
 ### Adding news data
 A `POST` request has to be made to (link) with the content in JSON format.
 
@@ -73,6 +74,8 @@ Example of JSON body of POST request:
     "sentiment": "0.0",
 }
 ```
+
+
 
 
 

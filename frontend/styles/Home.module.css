@@ -1,0 +1,62 @@
+.box {
+  margin: 3em;
+  margin-left: auto;
+  width: 60vw;
+  height: 75vh;
+  border-style: solid;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box:hover {
+  box-shadow: 5px 10px 18px #888888;
+  transition: all 0.3s ease-in-out;
+}
+
+.container{
+  display: flex;
+}
+
+.stocks{
+  /* display: inline-block;
+  border: 1px solid red;
+  padding: 10%;
+  vertical-align: middle; */
+  flex: 1;
+  border: 0.5px solid grey;
+  margin: 10px;
+  border-radius: 25px;
+}
+
+.headers{
+  text-align: center;
+  color: rebeccapurple;
+  opacity: 90%;
+}
+
+/* .headers::after{
+  content: "\a";
+  white-space: pre;
+} */
+
+
+
+/* .recommended {
+  padding-left: 3%;
+} */
+
+.housesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.housesContainer > * {
+  margin-top: 10px;
+  min-width: 300px;
+} 
+
+
+

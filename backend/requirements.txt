@@ -1,0 +1,19 @@
+
+fastapi
+gunicorn
+ipykernel
+nltk
+numpy
+pandas
+psycopg2-binary
+# pytorch
+python-dotenv
+matplotlib
+seaborn
+scikit-learn == 1.0.2
+sqlalchemy
+# tensorflow
+requests
+regex
+uvicorn
+vaderSentiment
