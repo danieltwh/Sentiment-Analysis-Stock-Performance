@@ -1,4 +1,6 @@
-
+aiohttp
+argparse
+beautifulsoup4
 fastapi
 gunicorn
 ipykernel
@@ -9,6 +11,7 @@ psycopg2-binary
 # pytorch
 python-dotenv
 matplotlib
+pika
 seaborn
 scikit-learn == 1.0.2
 sqlalchemy
@@ -17,3 +20,4 @@ requests
 regex
 uvicorn
 vaderSentiment
+pyyaml
