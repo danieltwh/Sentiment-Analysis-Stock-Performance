@@ -3,6 +3,7 @@ from urllib.request import Request
 import uvicorn
 from fastapi import FastAPI, Response, HTTPException, Depends
 from fastapi.responses import RedirectResponse
+from fastapi.middleware.cors import CORSMiddleware
 import json
 import datetime
 from typing import Union, List
@@ -57,6 +58,14 @@ app = FastAPI(
     description = description,
     tags_metadata = tags_metadata,
     swagger_ui_parameters= swagger_ui_parameters
+)
+
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins = ['*'],
+    allow_methods = ['*'],
+    allow_headers = ['*']
 )
 
 # Dependency
