@@ -97,11 +97,14 @@ if __name__ == "__main__":
                         prog = 'Consume News',
                         description = 'Consume News in RabbitMQ to populate database',
                         epilog = 'Text at the bottom of help')
-    parser.add_argument("-d", "--debug", type=bool,required=True)
+    # parser.add_argument("-d", "--debug", type=bool, default=False)
+    parser.add_argument('-d','--debug', dest='debug',action='store_true')
 
     args = parser.parse_args()
 
     is_debug = args.debug
+
+    # print(is_debug, type(is_debug))
 
     try:
         main(is_debug)
