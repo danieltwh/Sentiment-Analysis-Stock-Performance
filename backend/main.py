@@ -5,6 +5,7 @@ from fastapi import FastAPI, Response, HTTPException, Depends
 from fastapi.responses import RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 import json
+import numpy as np
 import datetime
 from typing import Union, List
 
@@ -199,10 +200,10 @@ async def get_stock_sentiment(stock_ticker: str, db: Session = Depends(get_db)):
     if stock is None:
         raise HTTPException(status_code=404, detail="Stock ticker not found")
     sentiment = crud.get_stock_sentiment(db, stock_ticker)
-    if sentiment is None:
-        raise HTTPException(status_code=404, detail="No sentiment not found")
+    # if sentiment is None:
+    #     raise HTTPException(status_code=404, detail="No sentiment not found")
     result = {}
-    result["sentiment"] = sentiment
+    result["sentiment"] = None if not sentiment or np.isnan(sentiment) else sentiment
     return Response(content = json.dumps(result, default=str), media_type="application/json")
 
 @app.get("/news/{news_id}", response_model = schemas.News, tags=["News Data"],
