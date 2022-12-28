@@ -54,9 +54,14 @@ function ResultsView(props) {
   }
   return (
     <div className="mt-8">
-    <div className="mb-8">
-      <h3 className="text-2xl font-thin text-center bg-sky-800/50 w-1/2 mx-auto py-2 px-1 rounded-full">Overall Sentiment: <span className="font-bold">{sentiment ? Math.round(sentiment * 1000) / 1000 : "NULL"}</span></h3>
-    </div>
+    {
+      results.length > 0 ?
+      <div className="mb-8">
+        <h3 className="text-xl font-thin text-center bg-sky-800/50 w-1/2 mx-auto py-2 px-1 rounded-full">Overall Sentiment: <span className="font-bold">{sentiment ? Math.round(sentiment * 1000) / 1000 : "NULL"}</span></h3>
+      </div> 
+      : <></>
+      
+    }
     {
       results.length > 0 ?
       <h2 class="text-2xl font-extrabold text-slate-300">LATEST NEWS</h2> :
