@@ -139,6 +139,9 @@ async def get_stock_news(stock_ticker: str, db: Session = Depends(get_db)):
     if stock is None:
         raise HTTPException(status_code=404, detail="Stock ticker not found")
     news = crud.get_stock_news(db, stock_ticker)
+    for article in news:
+        sentiment = article['sentiment']
+        article["sentiment"] = None if not sentiment or np.isnan(sentiment) else sentiment
     result = {}
     result["news"] = news
     return Response(content = json.dumps(result, default=str), media_type="application/json")
