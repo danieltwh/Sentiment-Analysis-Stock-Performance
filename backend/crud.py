@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
 from sqlalchemy.sql import func
+from sqlalchemy import desc
 
 import models
 import schemas
@@ -102,3 +103,23 @@ def get_stock_sentiment(db: Session, stock_ticker: str):
     models.News, models.StockNews.news_id == models.News.id, isouter=True
     ).filter(models.StockNews.stock_ticker == stock_ticker).first()[0]
     return result
+
+def get_last_news(db: Session, stock_ticker: str):
+    columns = [
+        models.News.id,
+        models.News.title,
+        models.News.date,
+        models.News.source,
+        models.News.url,
+        models.StockNews.sentiment,
+        models.StockNews.match_score
+        ]
+
+    result = db.query(*columns).join(
+    models.News, models.StockNews.news_id == models.News.id, isouter=True
+        ).filter(models.StockNews.stock_ticker == stock_ticker).order_by(desc(models.News.date)).first()
+    if result == None:
+        return {}
+    else:
+        result = dict(result)
+        return result

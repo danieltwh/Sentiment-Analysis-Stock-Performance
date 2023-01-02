@@ -3,7 +3,9 @@ from urllib.request import Request
 import uvicorn
 from fastapi import FastAPI, Response, HTTPException, Depends
 from fastapi.responses import RedirectResponse
+from fastapi.middleware.cors import CORSMiddleware
 import json
+import numpy as np
 import datetime
 from typing import Union, List
 
@@ -57,6 +59,14 @@ app = FastAPI(
     description = description,
     tags_metadata = tags_metadata,
     swagger_ui_parameters= swagger_ui_parameters
+)
+
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins = ['*'],
+    allow_methods = ['*'],
+    allow_headers = ['*']
 )
 
 # Dependency
@@ -129,6 +139,9 @@ async def get_stock_news(stock_ticker: str, db: Session = Depends(get_db)):
     if stock is None:
         raise HTTPException(status_code=404, detail="Stock ticker not found")
     news = crud.get_stock_news(db, stock_ticker)
+    for article in news:
+        sentiment = article['sentiment']
+        article["sentiment"] = None if not sentiment or np.isnan(sentiment) else sentiment
     result = {}
     result["news"] = news
     return Response(content = json.dumps(result, default=str), media_type="application/json")
@@ -190,10 +203,10 @@ async def get_stock_sentiment(stock_ticker: str, db: Session = Depends(get_db)):
     if stock is None:
         raise HTTPException(status_code=404, detail="Stock ticker not found")
     sentiment = crud.get_stock_sentiment(db, stock_ticker)
-    if sentiment is None:
-        raise HTTPException(status_code=404, detail="No sentiment not found")
+    # if sentiment is None:
+    #     raise HTTPException(status_code=404, detail="No sentiment not found")
     result = {}
-    result["sentiment"] = sentiment
+    result["sentiment"] = None if not sentiment or np.isnan(sentiment) else sentiment
     return Response(content = json.dumps(result, default=str), media_type="application/json")
 
 @app.get("/news/{news_id}", response_model = schemas.News, tags=["News Data"],
