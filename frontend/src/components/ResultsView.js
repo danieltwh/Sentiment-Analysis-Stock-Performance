@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components';
-import { Pagination, Stack } from '@mui/material';
+import { Pagination, Stack, Modal, Box, Typography, Button } from '@mui/material';
+import HelpIcon from '@mui/icons-material/Help';
 
 function ResultsView(props) {
   const [results, setResults] = useState([]);
@@ -10,6 +11,20 @@ function ResultsView(props) {
   const [numPages, setNumPages] = useState(1);
   const [recordsPerPage] = useState(5);
   const [displayedRecords, setDisplayedRecords] = useState([]);
+  // modal state
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
 
 // For updating results
   useEffect(() => {
@@ -43,6 +58,8 @@ function ResultsView(props) {
     }
   }, [props.selectedTicker])
 
+  const handleModalClose = () => setModalOpen(false);
+  const handleModalOpen = () => setModalOpen(true);
 
   const handlePaginationChange = (event, value) => {
     setCurrPage(value);
@@ -64,7 +81,22 @@ function ResultsView(props) {
     }
     {
       results.length > 0 ?
-      <h2 class="text-2xl font-extrabold text-slate-300">LATEST NEWS</h2> :
+      <div className="flex">
+      <h2 class="text-2xl font-extrabold text-slate-300">LATEST NEWS AND SENTIMENTS</h2> 
+      <Button onClick={handleModalOpen}>What</Button>
+      <Modal open={modalOpen} onClose={handleModalClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+      <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Text in a modal
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </Typography>
+        </Box>
+      </Modal>
+
+      </div>
+      :
       <></>
     }
     
