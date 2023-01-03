@@ -8,7 +8,7 @@ def predict(text, model_path):
     text = [text.lower()]
     loaded_model = load_model(model_path)
     bert_result = loaded_model(text)
-    bert_res_class = tf.argmax(bert_result, axis=1)[0]
+    bert_res_class = (tf.argmax(bert_result, axis=1)[0]).numpy()
     labels = {1: 'negative', 2: 'neutral', 0: 'positive'}
     return labels[bert_res_class]
 
