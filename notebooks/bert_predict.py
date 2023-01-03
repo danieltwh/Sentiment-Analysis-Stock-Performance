@@ -4,10 +4,9 @@ def load_model(model_path):
     loaded_model = tf.saved_model.load(model_path)
     return loaded_model
 
-def predict(text, model_path):
+def predict(text, model):
     text = [text.lower()]
-    loaded_model = load_model(model_path)
-    bert_result = loaded_model(text)
+    bert_result = model(text)
     bert_res_class = (tf.argmax(bert_result, axis=1)[0]).numpy()
     labels = {1: 'negative', 2: 'neutral', 0: 'positive'}
     return labels[bert_res_class]
@@ -17,7 +16,8 @@ if __name__ == '__main__':
     dir_path = "<absolute path of the directory containing the bert model>"
 
     try:
-        sentiment = predict(text, dir_path)
+        model = load_model(dir_path)
+        sentiment = predict(text, model)
         print(sentiment)
     except Exception as e:
         print(e)
