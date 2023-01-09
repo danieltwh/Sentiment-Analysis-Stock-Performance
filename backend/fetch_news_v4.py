@@ -166,7 +166,7 @@ if __name__ == "__main__":
   
   API_KEYS = [val["key"] for key, val in APIS] # pass in the list of API tokens
   start_indexes = [val["start_index"] for key, val in APIS] # pass in the list of start index corresponding to each API token
-  no_weeks = 20 # past n weeks of data from today to be collected (need to be a sufficiently distant past)
+  no_weeks = 10 # past n weeks of data from today to be collected (need to be a sufficiently distant past)
 
   stocks = []
   try:
