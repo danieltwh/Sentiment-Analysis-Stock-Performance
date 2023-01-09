@@ -115,7 +115,7 @@ def get_stock_sentiment(db: Session, stock_ticker: str):
         models.News.date <= end_date_str).filter(
             models.StockNews.sentiment != 'NaN'
     ).first()
-    print(start_date_str, end_date_str, result)
+    # print(start_date_str, end_date_str, result)
 
     final_result = result[0]
 
