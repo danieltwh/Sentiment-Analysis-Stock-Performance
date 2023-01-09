@@ -101,7 +101,7 @@ def create_stock_news(db: Session, stock_news_data: schemas.StockNewsCreate):
 
 def get_stock_sentiment(db: Session, stock_ticker: str):
 
-    no_weeks = 20 # past n weeks of data from today to be collected (need to be a sufficiently distant past)
+    no_weeks = 10 # past n weeks of data from today to be collected (need to be a sufficiently distant past)
     end_date = (datetime.today() - timedelta(weeks=no_weeks))
     start_date = end_date - timedelta(weeks=4)
 
