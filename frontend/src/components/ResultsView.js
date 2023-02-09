@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components';
 import { Pagination, Stack, Modal, Box, Typography, Button } from '@mui/material';
-import HelpIcon from '@mui/icons-material/Help';
 
 function ResultsView(props) {
   const [results, setResults] = useState([]);
@@ -11,8 +10,6 @@ function ResultsView(props) {
   const [numPages, setNumPages] = useState(1);
   const [recordsPerPage] = useState(5);
   const [displayedRecords, setDisplayedRecords] = useState([]);
-  // modal state
-  const [modalOpen, setModalOpen] = useState(false);
 
   const style = {
     position: 'absolute',
@@ -37,6 +34,7 @@ function ResultsView(props) {
       let stockSentiment = await fetch(`https://nlp-stock-performance-backend.herokuapp.com/stock-sentiment/${ticker}`)
         .then(res => res.json())
         .then(data => data.sentiment);
+      console.log(stockSentiment);
 
       const newsData = JSON.parse(rawNewsData).news;
       newsData.map(news => {
@@ -58,8 +56,6 @@ function ResultsView(props) {
     }
   }, [props.selectedTicker])
 
-  const handleModalClose = () => setModalOpen(false);
-  const handleModalOpen = () => setModalOpen(true);
 
   const handlePaginationChange = (event, value) => {
     setCurrPage(value);
@@ -74,7 +70,7 @@ function ResultsView(props) {
     {
       results.length > 0 ?
       <div className="mb-8">
-        <h3 className="text-xl font-thin text-center bg-sky-800/50 w-1/2 mx-auto py-2 px-1 rounded-full">Overall Sentiment: <span className="font-bold">{sentiment ? Math.round(sentiment * 1000) / 1000 : "NULL"}</span></h3>
+        <h3 className="text-xl font-thin text-center bg-sky-800/50 w-1/2 mx-auto py-2 px-1 rounded-full">Overall Sentiment: <span className="font-bold">{sentiment === null ? "NULL" : Math.round(sentiment * 1000) / 1000}</span></h3>
       </div> 
       : <></>
       
@@ -83,18 +79,6 @@ function ResultsView(props) {
       results.length > 0 ?
       <div className="flex">
       <h2 class="text-2xl font-extrabold text-slate-300">LATEST NEWS AND SENTIMENTS</h2> 
-      <Button onClick={handleModalOpen}>What</Button>
-      <Modal open={modalOpen} onClose={handleModalClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-      <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
-      </Modal>
-
       </div>
       :
       <></>
@@ -105,7 +89,7 @@ function ResultsView(props) {
         <StockView> 
           <div className="flex justify-between">
             <a href={news.url} target="_blank" className="truncate text-sky-500 text-base hover:text-sky-700">{news.title}</a>
-            <p className="text-xs font-bold text-sky-200 bg-sky-800/75 px-1.5 pt-1.5 pb-1 rounded">{news.sentiment ? Math.round(news.sentiment * 1000)/1000 : "NULL"}</p>
+            <p className="text-xs font-bold text-sky-200 bg-sky-800/75 px-1.5 pt-1.5 pb-1 rounded">{news.sentiment === null ? "NULL" : Math.round(news.sentiment * 1000)/1000}</p>
           </div>
           <span className="text-slate-300/75 text-sm">{news.date} | {news.source}</span>
         </StockView>
