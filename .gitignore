@@ -134,3 +134,7 @@ dmypy.json
 !*.secret
 notebooks/mlconfig.py
 data_pipeline/AlphaVantage_Collection/mlconfig.py
+
+# frontend
+node_modules
+.next

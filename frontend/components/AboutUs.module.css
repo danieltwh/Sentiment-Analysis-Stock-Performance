@@ -1,0 +1,19 @@
+.container {
+    background: #4F2C93;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* // padding: 0.2rem calc((100vw - 1000px) / 2); */
+    padding-left: 3%;
+    padding-right: 3%;
+    z-index: 12;
+}
+
+.aboutDiv {
+    align-items: center;
+    justify-content: center;
+    /* display: center; */
+    /* padding-left: 10%;
+    padding-right: 10%; */
+  }
