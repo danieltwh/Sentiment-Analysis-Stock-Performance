@@ -1,5 +1,7 @@
 # Mac DS_Store
 .DS_Store
+/backend/models/
+/model_api/models/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -138,3 +140,4 @@ data_pipeline/AlphaVantage_Collection/mlconfig.py
 # frontend
 node_modules
 .next
+backend/key.py
