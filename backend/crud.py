@@ -4,6 +4,7 @@ from sqlalchemy import desc
 
 import models
 import schemas
+from datetime import datetime, timedelta
 
 def get_stock(db: Session, stock_ticker: str):
     return db.query(models.Stock).filter(models.Stock.ticker == stock_ticker).first()
@@ -99,10 +100,26 @@ def create_stock_news(db: Session, stock_news_data: schemas.StockNewsCreate):
 
 
 def get_stock_sentiment(db: Session, stock_ticker: str):
+
+    no_weeks = 10 # past n weeks of data from today to be collected (need to be a sufficiently distant past)
+    end_date = (datetime.today() - timedelta(weeks=no_weeks))
+    start_date = end_date - timedelta(weeks=4)
+
+    end_date_str = end_date.strftime("%Y-%m-%d")
+    start_date_str = start_date.strftime("%Y-%m-%d")
+
     result = db.query(func.avg(models.StockNews.sentiment)).join(
     models.News, models.StockNews.news_id == models.News.id, isouter=True
-    ).filter(models.StockNews.stock_ticker == stock_ticker).first()[0]
-    return result
+    ).filter(models.StockNews.stock_ticker == stock_ticker).filter(
+        models.News.date >= start_date_str).filter(
+        models.News.date <= end_date_str).filter(
+            models.StockNews.sentiment != 'NaN'
+    ).first()
+    # print(start_date_str, end_date_str, result)
+
+    final_result = result[0]
+
+    return final_result
 
 def get_last_news(db: Session, stock_ticker: str):
     columns = [
